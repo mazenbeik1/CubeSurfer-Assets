@@ -10,7 +10,7 @@ public class PlayerMoverRunner : MonoBehaviour
     private bool canMotion = true;
     public bool CanMotion { get => canMotion; set => canMotion = value; }
 
-    public float VelocityOfPlayer = 1;
+    public float VelocityOfPlayer = 0;
     public int Score = 0;
     public TextMeshProUGUI ScoreText;
     public float GetVelocity { get => VelocityOfPlayer; }
@@ -18,6 +18,15 @@ public class PlayerMoverRunner : MonoBehaviour
     public GameObject Effect;
     public RectTransform WinUI;
     public RectTransform FailUI;
+    public RectTransform StartUI;
+
+    private void Awake()
+    {
+        VelocityOfPlayer = 0;
+        Debug.Log("StartActivated");
+        StartUI.gameObject.SetActive(true);
+    }
+
     private void Update()
     {
         if (!canMotion)
@@ -74,6 +83,21 @@ public class PlayerMoverRunner : MonoBehaviour
         });
     }
 
+    public void StartGame()
+    {
+        Debug.Log("game started");
+        StartUI.gameObject.SetActive(false);
+        VelocityOfPlayer = 1;
+
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("Level_02");
+        //WinUI.gameObject.SetActive(false);
+        canMotion = true;
+    }
+
     private void ActivateWinUI()
 	{
         Debug.Log("WinActivated");
@@ -90,7 +114,9 @@ public class PlayerMoverRunner : MonoBehaviour
 
     public void RestartGame()
 	{
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Level_01");
+        FailUI.gameObject.SetActive(false);
+        canMotion = true;
 	}
 
     IEnumerator DecreaseSpeedOfPlayer()
