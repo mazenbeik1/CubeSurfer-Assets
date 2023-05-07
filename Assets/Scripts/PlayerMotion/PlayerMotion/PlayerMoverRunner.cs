@@ -63,7 +63,7 @@ public class PlayerMoverRunner : MonoBehaviour
 
         if (other.gameObject.tag == "Boost")
         {
-            VelocityOfPlayer = 2;
+            VelocityOfPlayer = VelocityOfPlayer * 2;
         }
     }
 
@@ -94,6 +94,13 @@ public class PlayerMoverRunner : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene("Level_02");
+        //WinUI.gameObject.SetActive(false);
+        canMotion = true;
+    }
+
+    public void PreviousLevel()
+    {
+        SceneManager.LoadScene("Level_01");
         //WinUI.gameObject.SetActive(false);
         canMotion = true;
     }
