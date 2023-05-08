@@ -21,6 +21,9 @@ public class CubeBehaviour : MonoBehaviour
 				PlayerCubeManager.Instance.DropCube(this);
 			}
 		}
+
+
+
 		/*
 		if(Physics.Raycast(transform.position, Vector3.down, out hit, 0.03f))
 		{
@@ -51,4 +54,23 @@ public class CubeBehaviour : MonoBehaviour
 		}
 	}*/
 
+	public void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag("Lava"))
+		{
+			StartCoroutine(MeltCoroutine());
+			Debug.Log("Trigger Lava");
+		}
+	}
+
+	private IEnumerator MeltCoroutine()
+	{
+		yield return new WaitForSeconds(0.3f);
+
+		PlayerCubeManager.Instance.MeltCube(this);
+		Debug.Log("Melted Cube");
+	}
+
 }
+
+
