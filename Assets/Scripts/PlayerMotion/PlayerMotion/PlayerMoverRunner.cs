@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -11,8 +12,12 @@ public class PlayerMoverRunner : MonoBehaviour
     public bool CanMotion { get => canMotion; set => canMotion = value; }
 
     public float VelocityOfPlayer = 0;
-    public int Score = 0;
-    public TextMeshProUGUI ScoreText;
+    public int LocalScore = 0;  
+    public int GlobalScore = 0;
+
+    public TextMeshProUGUI GlobalScoreText ;
+    public TextMeshProUGUI LocalScoreText ;
+
     public float GetVelocity { get => VelocityOfPlayer; }
 
     public GameObject Effect;
@@ -25,6 +30,12 @@ public class PlayerMoverRunner : MonoBehaviour
         VelocityOfPlayer = 0;
         Debug.Log("StartActivated");
         StartUI.gameObject.SetActive(true);
+    }
+
+    private void Start(){
+        GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
+        GlobalScore=int.Parse(GlobalScoreText.text);        
+        PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
     }
 
     private void Update()
@@ -109,14 +120,14 @@ public class PlayerMoverRunner : MonoBehaviour
 	{
         Debug.Log("WinActivated");
         WinUI.gameObject.SetActive(true);
-        
+        LocalScoreText.text=($"Score:{LocalScore.ToString()}");
+
     }
 
     public void ActivateFailUI()
     {
         Debug.Log("WinActivated");
         FailUI.gameObject.SetActive(true);
-       
     }
 
     public void RestartGame()
@@ -137,9 +148,14 @@ public class PlayerMoverRunner : MonoBehaviour
 
     public void UpdateScore()
 	{
-        Score++;
-        ScoreText.text = ($"Score: {Score.ToString()}");
+        GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
+        GlobalScore=int.Parse(GlobalScoreText.text);        
+        LocalScore++;
+        GlobalScore=GlobalScore+1;
+        GlobalScoreText.text = (GlobalScore.ToString());
+        PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
     }
+
 }
 
 

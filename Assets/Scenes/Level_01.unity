@@ -5090,7 +5090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -603, y: 352}
+  m_AnchoredPosition: {x: -556, y: 352}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537556661
@@ -11711,7 +11711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -569, y: 366}
+  m_AnchoredPosition: {x: -517, y: 366}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132595554
@@ -15994,7 +15994,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VelocityOfPlayer: 0.5
-  Score: 0
+  LocalScore: 0
+  GlobalScore: 0
+  GlobalScoreText: {fileID: 537556661}
   ScoreText: {fileID: 1062147139}
   Effect: {fileID: 1519537580}
   WinUI: {fileID: 173338928}
@@ -18539,6 +18541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26cd7d837009418fb801b0b2cf61b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GlobalScoreText: {fileID: 537556661}
 --- !u!4 &1935831523
 Transform:
   m_ObjectHideFlags: 0
