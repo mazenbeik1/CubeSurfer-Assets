@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 using TMPro;
+using HmsPlugin;
+using HuaweiMobileServices.Base;
+using HuaweiMobileServices.IAP;
+using HuaweiMobileServices.Utils;
 
 public class PlayerMoverRunner : MonoBehaviour
 {
@@ -36,6 +40,12 @@ public class PlayerMoverRunner : MonoBehaviour
         GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
         GlobalScore=int.Parse(GlobalScoreText.text);        
         PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
+
+        HMSIAPManager.Instance.InitializeIAP();
+        HMSIAPManager.Instance.OnBuyProductSuccess = OnBuyProductSuccess;
+        HMSIAPManager.Instance.OnInitializeIAPSuccess = OnInitializeIAPSuccess;
+        HMSIAPManager.Instance.OnInitializeIAPFailure = OnInitializeIAPFailure;
+        HMSIAPManager.Instance.OnBuyProductFailure = OnBuyProductFailure;
     }
 
     private void Update()
@@ -155,6 +165,63 @@ public class PlayerMoverRunner : MonoBehaviour
         GlobalScoreText.text = (GlobalScore.ToString());
         PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
     }
+
+    public void BuyGem()
+    {
+        HMSIAPManager.Instance.PurchaseProduct("Gems");
+
+    }
+
+    void OnInitializeIAPFailure(HMSException ex)
+    {
+        Debug.Log("initalise faaaaaaaaaaaiiiiiiilllllllllll " + ex);
+    }
+    void OnInitializeIAPSuccess()
+    { 
+        Debug.Log("initalise dooooooooooooooooooneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"  ); 
+    }
+
+    private void OnBuyProductSuccess(PurchaseResultInfo obj)
+    {
+        //After back to unity activity 
+        StartCoroutine(AfterBuyProductSuccess(obj));
+       // RestoreProducts();
+    }
+    IEnumerator AfterBuyProductSuccess(PurchaseResultInfo obj)
+    {
+        yield return new WaitForSeconds(1f);
+        Debug.Log("[IAPManager]: AfterBuyProductSuccess");
+        if (obj.InAppPurchaseData.ProductId == "Gems")
+        {
+            GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
+            GlobalScore=int.Parse(GlobalScoreText.text);        
+            GlobalScore=GlobalScore+50;
+            GlobalScoreText.text = (GlobalScore.ToString());
+            PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
+        }
+       
+    }
+    private void OnBuyProductFailure(int code)
+    {
+    if (code == OrderStatusCode.ORDER_PRODUCT_OWNED)
+        {
+            HMSIAPManager.Instance.OnObtainOwnedPurchasesSuccess = OnObtainOwnedPurchasesSuccess;
+            HMSIAPManager.Instance.ObtainOwnedPurchases(PriceType.IN_APP_CONSUMABLE);
+        }
+    }
+
+    private void OnObtainOwnedPurchasesSuccess(OwnedPurchasesResult result)
+    {
+        if (result != null)
+        {
+            foreach (var obj in result.InAppPurchaseDataList)
+            {
+                Debug.Log("[IAPManager]: OnObtainOwnedPurchasesSuccess : " + obj.ProductId);
+                HMSIAPManager.Instance.ConsumePurchaseWithToken(obj.PurchaseToken);
+            }
+        }
+    }
+
 
 }
 

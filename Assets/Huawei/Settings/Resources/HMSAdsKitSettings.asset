@@ -19,9 +19,15 @@ MonoBehaviour:
     - EnableRewardedAd
     - EnableBannerAd
     - ShowBannerOnLoad
+    - InterstitialAdID
+    - BannerAdID
+    - RewardedAdID
     _values:
+    - False
     - True
     - True
     - True
     - True
-    - True
+    - t4rinv3i45
+    - l6wvv2yrdf
+    - p7na51ik72

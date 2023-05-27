@@ -21,36 +21,36 @@
 	},
 	"client":{
 		"cp_id":"30090000035048163",
-		"product_id":"388421841221488642",
-		"client_id":"1162639477001178944",
-		"client_secret":"1E988CADCF21FE708F307DE763C78CF0A0D30854D1F3C5D54EA25D884378E78A",
-		"project_id":"388421841221488642",
-		"app_id":"108357057",
-		"api_key":"DAEDAF5ibFG8+WA00OJWZLyLJVpC42/sa6cjnN79Gs734rr1IUfvoU7RyB5Ymb4bFvn9LdHgpP0bdbqPey7CiT0ZAmZEmvNOtT7DYQ==",
-		"package_name":"com.MZmZ.CubeSurfer"
+		"product_id":"388421841221495430",
+		"client_id":"1165501204810190336",
+		"client_secret":"D6E993AAE81912DF6B713F8765D4228CF92A01BCBA9F7C96BE5794377520CF46",
+		"project_id":"388421841221495430",
+		"app_id":"108387019",
+		"api_key":"DAEDAJ9n7Lag0ecVsnKCeg7ct5KoUPxnfqTUjtdzhUOnqTXdWVUhem70+8klp1GjcvDACScfSGO3mGo6pWxQQRljVPp5kD8ZofniwQ==",
+		"package_name":"com.cubesurferuni.huawei"
 	},
 	"oauth_client":{
-		"client_id":"108357057",
+		"client_id":"108387019",
 		"client_type":1
 	},
 	"app_info":{
-		"app_id":"108357057",
-		"package_name":"com.MZmZ.CubeSurfer"
+		"app_id":"108387019",
+		"package_name":"com.cubesurferuni.huawei"
 	},
 	"configuration_version":"3.0",
 	"appInfos":[
 		{
-			"package_name":"com.MZmZ.CubeSurfer",
+			"package_name":"com.cubesurferuni.huawei",
 			"client":{
-				"app_id":"108357057"
+				"app_id":"108387019"
 			},
 			"app_info":{
-				"package_name":"com.MZmZ.CubeSurfer",
-				"app_id":"108357057"
+				"package_name":"com.cubesurferuni.huawei",
+				"app_id":"108387019"
 			},
 			"oauth_client":{
 				"client_type":1,
-				"client_id":"108357057"
+				"client_id":"108387019"
 			}
 		}
 	]
