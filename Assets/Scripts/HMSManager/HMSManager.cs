@@ -22,7 +22,6 @@ public class HMSManager : MonoBehaviour
     void Start()
     {
         HMSAdsKitManager.Instance.OnRewarded=OnRewarded;
-
     }
 
     public void ShowInterstitial()
@@ -37,13 +36,11 @@ public class HMSManager : MonoBehaviour
     }
     public void OnRewarded(Reward reward)
     {
-        // WinUI.gameObject.SetActive(true);
         GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
         GlobalScore=int.Parse(GlobalScoreText.text);        
         GlobalScore=GlobalScore+5;
         GlobalScoreText.text=GlobalScore.ToString();
         PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
-
     }
 
 
