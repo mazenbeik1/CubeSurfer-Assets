@@ -54,6 +54,9 @@ To play Cube Surfer, follow these steps:
 - The players' development and learning curve are carefully taken into account when designing our levels. Each level is carefully designed to offer a unique set of difficulties and include brand-new components. For instance, we added walls of different color to Level 2 to enhance visual variation and offer a unique gameplay experience. The placement, structure, and difficulty of obstacles are carefully planned to produce stages that get progressively more challenging. A fair challenge was intended, but we also wanted to make sure that the gameplay was still fun and rewarding.
 - We have worked hard to offer a game experience that is both interesting and enjoyable through our thorough Game Design and Level Design approach. Our goal is to maintain players' immersion, motivation, and eagerness to explore each new level by carefully designing the mechanics, challenges, and level advancement.
 
+### Note: Test Ads
+Please be aware that all the photos and images used in this project, including the interstitial ads, are for testing purposes only. These test ads are not actual advertisements provided by the Huawei plugin. They have been included to demonstrate the functionality and placement of interstitial ads within the Cube Surfer game during the development and testing phases.
+
 ### Phase 2
 
 ##### Integrate EvilMindDevs/hms-unity-plugin:
