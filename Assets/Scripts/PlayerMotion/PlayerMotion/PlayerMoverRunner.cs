@@ -18,8 +18,11 @@ public class PlayerMoverRunner : MonoBehaviour
     public float VelocityOfPlayer = 0;
     public int LocalScore = 0;  
     public int GlobalScore = 0;
+    public int RemoveAds = 0;
+
 
     public TextMeshProUGUI GlobalScoreText ;
+    public TextMeshProUGUI RemoveAdsText ;
     public TextMeshProUGUI LocalScoreMenuText ;
     public TextMeshProUGUI LocalScoreText ;
 
@@ -99,7 +102,6 @@ public class PlayerMoverRunner : MonoBehaviour
 
     public void AccessEndPoint()
     {
-        //float angle = 0;
         DOTween.To(() => VelocityOfPlayer, x => VelocityOfPlayer = x, 0, 1f).OnUpdate(() =>
         {
             Debug.Log("Dotween update");
@@ -108,7 +110,18 @@ public class PlayerMoverRunner : MonoBehaviour
             canMotion = false;
             Effect.gameObject.SetActive(true);
             PlayerBehaviour.Instance.SuccessAnimation();
+            RemoveAdsText.text=PlayerPrefs.GetString("RemoveAdsText","0");
+            RemoveAds=int.Parse(RemoveAdsText.text);   
+            if(RemoveAds > 0)  
+            {   
+                RemoveAds=RemoveAds-1;
+                RemoveAdsText.text = (RemoveAds.ToString());
+                PlayerPrefs.SetString("RemoveAdsText", RemoveAds.ToString());
+            }
+            else
+            {
             HMSManager.ShowInterstitial();
+            }
             ActivateWinUI();
 
         });
@@ -142,7 +155,6 @@ public class PlayerMoverRunner : MonoBehaviour
 	{
         Debug.Log("WinActivated");
         WinUI.gameObject.SetActive(true);
-        HMSManager.ShowInterstitial();
         LocalScoreMenuText.text=($"Score:{LocalScore.ToString()}");
         GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
         GlobalScore=int.Parse(GlobalScoreText.text);        
@@ -198,9 +210,9 @@ public class PlayerMoverRunner : MonoBehaviour
         LocalScoreText.text = (LocalScore.ToString());
     }
 
-    public void BuyGem()
+    public void BuyProduct(string productID)
     {
-        HMSIAPManager.Instance.PurchaseProduct("Gems");
+        HMSIAPManager.Instance.PurchaseProduct(productID);
 
     }
 
@@ -215,15 +227,8 @@ public class PlayerMoverRunner : MonoBehaviour
 
     private void OnBuyProductSuccess(PurchaseResultInfo obj)
     {
-        //After back to unity activity 
-        StartCoroutine(AfterBuyProductSuccess(obj));
-       // RestoreProducts();
-    }
-    IEnumerator AfterBuyProductSuccess(PurchaseResultInfo obj)
-    {
-        yield return new WaitForSeconds(1f);
-        Debug.Log("[IAPManager]: AfterBuyProductSuccess");
-        if (obj.InAppPurchaseData.ProductId == "Gems")
+        string myProductId = obj.InAppPurchaseData.ProductId;
+        if (myProductId == "Gems")
         {
             GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
             GlobalScore=int.Parse(GlobalScoreText.text);        
@@ -231,7 +236,21 @@ public class PlayerMoverRunner : MonoBehaviour
             GlobalScoreText.text = (GlobalScore.ToString());
             PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
         }
-       
+
+        if (myProductId.Equals("RemoveAds"))
+        {
+            RemoveAdsText.text=PlayerPrefs.GetString("RemoveAdsText","0");
+            RemoveAds=int.Parse(RemoveAdsText.text);        
+            RemoveAds=RemoveAds+5;
+            RemoveAdsText.text = (RemoveAds.ToString());
+            PlayerPrefs.SetString("RemoveAdsText", RemoveAds.ToString());
+        }
+
+
+    }
+    IEnumerator AfterBuyProductSuccess(PurchaseResultInfo obj)
+    {
+        yield return new WaitForSeconds(1f);
     }
     private void OnBuyProductFailure(int code)
     {
