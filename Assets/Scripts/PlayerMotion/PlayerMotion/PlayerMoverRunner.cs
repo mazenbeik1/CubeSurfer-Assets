@@ -20,20 +20,29 @@ public class PlayerMoverRunner : MonoBehaviour
     public int GlobalScore = 0;
 
     public TextMeshProUGUI GlobalScoreText ;
+    public TextMeshProUGUI LocalScoreMenuText ;
     public TextMeshProUGUI LocalScoreText ;
+
 
     public float GetVelocity { get => VelocityOfPlayer; }
 
     public GameObject Effect;
     public RectTransform WinUI;
-    public RectTransform FailUI;
+    public RectTransform FailUILv1;
     public RectTransform StartUI;
+    public RectTransform FailUILv2;
 
+
+
+    public HMSManager HMSManager;
     private void Awake()
     {
         VelocityOfPlayer = 0;
         Debug.Log("StartActivated");
         StartUI.gameObject.SetActive(true);
+        LocalScoreText.gameObject.SetActive(false);
+        GlobalScoreText.gameObject.SetActive(true);
+
     }
 
     private void Start(){
@@ -98,8 +107,9 @@ public class PlayerMoverRunner : MonoBehaviour
         {
             canMotion = false;
             Effect.gameObject.SetActive(true);
-            ActivateWinUI();
             PlayerBehaviour.Instance.SuccessAnimation();
+            HMSManager.ShowInterstitial();
+            ActivateWinUI();
 
         });
     }
@@ -108,6 +118,8 @@ public class PlayerMoverRunner : MonoBehaviour
     {
         Debug.Log("game started");
         StartUI.gameObject.SetActive(false);
+        LocalScoreText.gameObject.SetActive(true);
+        GlobalScoreText.gameObject.SetActive(false);
         VelocityOfPlayer = 1;
 
     }
@@ -130,20 +142,44 @@ public class PlayerMoverRunner : MonoBehaviour
 	{
         Debug.Log("WinActivated");
         WinUI.gameObject.SetActive(true);
-        LocalScoreText.text=($"Score:{LocalScore.ToString()}");
+        HMSManager.ShowInterstitial();
+        LocalScoreMenuText.text=($"Score:{LocalScore.ToString()}");
+        GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
+        GlobalScore=int.Parse(GlobalScoreText.text);        
+        GlobalScore=GlobalScore+LocalScore;
+        GlobalScoreText.text = (GlobalScore.ToString());
+        LocalScoreText.gameObject.SetActive(false);
+        GlobalScoreText.gameObject.SetActive(true);
+        PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
+
 
     }
 
     public void ActivateFailUI()
     {
-        Debug.Log("WinActivated");
-        FailUI.gameObject.SetActive(true);
+        LocalScoreText.gameObject.SetActive(false);
+        GlobalScoreText.gameObject.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "Level_01")
+        {
+            FailUILv1.gameObject.SetActive(true);
+        }
+        else
+        {
+            FailUILv2.gameObject.SetActive(true);
+        }
     }
 
     public void RestartGame()
 	{
         SceneManager.LoadScene("Level_01");
-        FailUI.gameObject.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "Level_01")
+        {
+            FailUILv1.gameObject.SetActive(false);
+        }
+        else
+        {
+            FailUILv2.gameObject.SetActive(false);
+        }
         canMotion = true;
 	}
 
@@ -158,12 +194,8 @@ public class PlayerMoverRunner : MonoBehaviour
 
     public void UpdateScore()
 	{
-        GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
-        GlobalScore=int.Parse(GlobalScoreText.text);        
         LocalScore++;
-        GlobalScore=GlobalScore+1;
-        GlobalScoreText.text = (GlobalScore.ToString());
-        PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
+        LocalScoreText.text = (LocalScore.ToString());
     }
 
     public void BuyGem()

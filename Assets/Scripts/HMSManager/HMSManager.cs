@@ -17,6 +17,7 @@ public class HMSManager : MonoBehaviour
     // public RectTransform WinUI;
     public TextMeshProUGUI GlobalScoreText ;
     public int GlobalScore ;
+	public PlayerMoverRunner PlayerMoverRunner;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +37,12 @@ public class HMSManager : MonoBehaviour
     }
     public void OnRewarded(Reward reward)
     {
-        GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
-        GlobalScore=int.Parse(GlobalScoreText.text);        
-        GlobalScore=GlobalScore+5;
-        GlobalScoreText.text=GlobalScore.ToString();
-        PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
+        // GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
+        // GlobalScore=int.Parse(GlobalScoreText.text);        
+        // GlobalScore=GlobalScore+5;
+        // GlobalScoreText.text=GlobalScore.ToString();
+        // PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
+        PlayerMoverRunner.NextLevel();
     }
 
 
