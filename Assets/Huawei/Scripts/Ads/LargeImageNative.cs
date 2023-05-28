@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class LargeImageNative : MonoBehaviour
 {
     [Header("Native Ad Unit ID")]
-    public string adUnitID = "testy63txaom86";
+    public string adUnitID = "h272nblgze";
 
     [Header("Components")]
     public Text ad_title;
