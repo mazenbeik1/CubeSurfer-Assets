@@ -30,6 +30,18 @@ public class HMSManager : MonoBehaviour
         HMSAdsKitManager.Instance.ShowInterstitialAd();
     }
 
+    public void ShowBannerAd()
+    {
+        HMSAdsKitManager.Instance.ShowBannerAd();
+    }
+
+    public void HideBannerAd()
+    {
+        HMSAdsKitManager.Instance.HideBannerAd();
+    }
+
+
+
 
     public void ShowRewardedAd()
     {
@@ -37,11 +49,6 @@ public class HMSManager : MonoBehaviour
     }
     public void OnRewarded(Reward reward)
     {
-        // GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
-        // GlobalScore=int.Parse(GlobalScoreText.text);        
-        // GlobalScore=GlobalScore+5;
-        // GlobalScoreText.text=GlobalScore.ToString();
-        // PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
         PlayerMoverRunner.NextLevel();
     }
 

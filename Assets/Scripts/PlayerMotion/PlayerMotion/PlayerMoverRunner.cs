@@ -27,6 +27,7 @@ public class PlayerMoverRunner : MonoBehaviour
     public TextMeshProUGUI LocalScoreText ;
 
 
+
     public float GetVelocity { get => VelocityOfPlayer; }
 
     public GameObject Effect;
@@ -34,6 +35,12 @@ public class PlayerMoverRunner : MonoBehaviour
     public RectTransform FailUILv1;
     public RectTransform StartUI;
     public RectTransform FailUILv2;
+    public RectTransform nativeWinUI;
+    public RectTransform nativeFailUILv1;
+    public RectTransform nativeFailUILv2;
+
+    public Button button;
+
 
 
 
@@ -45,13 +52,20 @@ public class PlayerMoverRunner : MonoBehaviour
         StartUI.gameObject.SetActive(true);
         LocalScoreText.gameObject.SetActive(false);
         GlobalScoreText.gameObject.SetActive(true);
-
     }
 
     private void Start(){
         GlobalScoreText.text=PlayerPrefs.GetString("GlobalScoreText","0");
         GlobalScore=int.Parse(GlobalScoreText.text);        
         PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
+        RemoveAdsText.text=PlayerPrefs.GetString("RemoveAdsText","0");
+        RemoveAds=int.Parse(RemoveAdsText.text);   
+        HMSManager.ShowBannerAd();
+        if(RemoveAds!=0)
+        {
+            button.interactable = false;
+            HMSManager.HideBannerAd();
+        }
 
         HMSIAPManager.Instance.InitializeIAP();
         HMSIAPManager.Instance.OnBuyProductSuccess = OnBuyProductSuccess;
@@ -112,15 +126,9 @@ public class PlayerMoverRunner : MonoBehaviour
             PlayerBehaviour.Instance.SuccessAnimation();
             RemoveAdsText.text=PlayerPrefs.GetString("RemoveAdsText","0");
             RemoveAds=int.Parse(RemoveAdsText.text);   
-            if(RemoveAds > 0)  
+            if(RemoveAds == 0)  
             {   
-                RemoveAds=RemoveAds-1;
-                RemoveAdsText.text = (RemoveAds.ToString());
-                PlayerPrefs.SetString("RemoveAdsText", RemoveAds.ToString());
-            }
-            else
-            {
-            HMSManager.ShowInterstitial();
+                HMSManager.ShowInterstitial();
             }
             ActivateWinUI();
 
@@ -140,14 +148,12 @@ public class PlayerMoverRunner : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene("Level_02");
-        //WinUI.gameObject.SetActive(false);
         canMotion = true;
     }
 
     public void PreviousLevel()
     {
         SceneManager.LoadScene("Level_01");
-        //WinUI.gameObject.SetActive(false);
         canMotion = true;
     }
 
@@ -163,6 +169,14 @@ public class PlayerMoverRunner : MonoBehaviour
         LocalScoreText.gameObject.SetActive(false);
         GlobalScoreText.gameObject.SetActive(true);
         PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
+        RemoveAdsText.text=PlayerPrefs.GetString("RemoveAdsText","0");
+        RemoveAds=int.Parse(RemoveAdsText.text);   
+        nativeWinUI.gameObject.SetActive(true);
+        if(RemoveAds!=0)
+        {
+            nativeWinUI.gameObject.SetActive(false);
+        }
+
 
 
     }
@@ -171,6 +185,10 @@ public class PlayerMoverRunner : MonoBehaviour
     {
         LocalScoreText.gameObject.SetActive(false);
         GlobalScoreText.gameObject.SetActive(true);
+        RemoveAdsText.text=PlayerPrefs.GetString("RemoveAdsText","0");
+        RemoveAds=int.Parse(RemoveAdsText.text);   
+        nativeFailUILv1.gameObject.SetActive(true);
+        nativeFailUILv2.gameObject.SetActive(true);
         if (SceneManager.GetActiveScene().name == "Level_01")
         {
             FailUILv1.gameObject.SetActive(true);
@@ -179,6 +197,13 @@ public class PlayerMoverRunner : MonoBehaviour
         {
             FailUILv2.gameObject.SetActive(true);
         }
+        if(RemoveAds!=0)
+        {
+            nativeFailUILv1.gameObject.SetActive(false);
+            nativeFailUILv2.gameObject.SetActive(false);
+
+        }
+
     }
 
     public void RestartGame()
@@ -241,7 +266,7 @@ public class PlayerMoverRunner : MonoBehaviour
         {
             RemoveAdsText.text=PlayerPrefs.GetString("RemoveAdsText","0");
             RemoveAds=int.Parse(RemoveAdsText.text);        
-            RemoveAds=RemoveAds+5;
+            RemoveAds=1;
             RemoveAdsText.text = (RemoveAds.ToString());
             PlayerPrefs.SetString("RemoveAdsText", RemoveAds.ToString());
         }
