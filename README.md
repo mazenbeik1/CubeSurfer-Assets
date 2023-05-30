@@ -3,8 +3,6 @@
 Cube Surfer is an exciting mobile game that takes players on a captivating adventure through an obstacle-filled course. With its engaging gameplay, stunning visuals, and dynamic level design, Cube Surfer offers a thrilling experience that keeps players hooked and entertained.
 
 In Cube Surfer, players assume the role of a cube-shaped character, embarking on a challenging journey through a world of cubes and obstacles. The objective is to collect cubes strategically while maneuvering through a variety of obstacles, including walls, spinning and moving platforms, and more. Each level presents new challenges and surprises, testing the players' reflexes, agility, and strategic thinking.
-
-
 ## Team Members
 
 - Mazen Ehab Hassan Elbeik (19290872). [Github account](https://github.com/mazenbeik1)
@@ -61,12 +59,32 @@ Please be aware that all the photos and images used in this project, including t
 
 ##### Integrate EvilMindDevs/hms-unity-plugin:
   - Interstitial Ads at every end of the level:
-  - Rewarded Ads for gameplay: 
+    - |   |  |
+      | ------------- | ------------- |
+      |![InterAd1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/6e308895-9aff-4aa8-a30c-a7737c0de51c)  |  ![InterAd2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/c989aecd-430f-4f34-b0d8-47035984f6c8)|
+  - Rewarded Ads for gameplay:
+    - |   |  |
+      | ------------- | ------------- |
+      | ![NativeAds2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/eec755d0-6bbf-47fa-a486-dd73bfdc1fdd)| ![RewardedAd](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/3b71a7d5-48a7-49f6-af3c-989de7b39d77)|
   - Native Ads Integration:
-  - Banner Ads Integration: 
+    - |   |  | |
+      | ------------- | ------------- | ------------- |
+      |![NativeAds](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/2bf8e5d4-fe0f-4d73-9d76-efe94a16ab47)|![NativeAds3](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/b107cc2b-ab72-47ac-834b-9368b638791b)| ![NativeAds2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/ce6c384a-73a2-493e-80c5-df9aae036408)|
+  - Banner Ads Integration:
+    - |   |  |
+      | ------------- | ------------- |
+      |![BannerAD](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/b0cd0399-5e31-4955-a620-d0c9c0a1f34a)| ![BannerAd2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/1e16c869-2024-4c48-ac7c-224cd86cc220)|
+
 ##### Integrating IAP Kit: 
   - Consumable Product Integration: 
+    - |   |
+      | ------------- | 
+      |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/4c5c7ad8-03ab-44be-88a0-f38751437961)|
+
   - NonConsumable Product Integration:
+    - |   |  |
+      | ------------- | ------------- |
+      |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/475a1daa-cd7b-4926-aafe-31374076b180)|![IAP2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/a34d3976-319f-4518-bbd8-ac46ff83df69)|
 ##### Releasing app on App Gallery:
   - Application Store Page Quality:
   - Downloadable and Playable with all functionalities:
