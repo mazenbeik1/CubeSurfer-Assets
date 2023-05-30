@@ -63,8 +63,7 @@ Please be aware that all the photos and images used in this project, including t
       | ------------- | ------------- |
       |![InterAd1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/6e308895-9aff-4aa8-a30c-a7737c0de51c)  |  ![InterAd2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/c989aecd-430f-4f34-b0d8-47035984f6c8)|
   - Rewarded Ads for gameplay:
-    - In this example, the user will have the option to resume the game at level 2 if they decide to watch the advertisement. The game will start over at level one if they choose not to view the advertisement.
-    - |   |  |
+    - | In this example, the user will have the option to resume the game at level 2 if they decide to watch the advertisement.  | The game will start over at level one if they choose not to view the advertisement. |
       | ------------- | ------------- |
       | ![NativeAds2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/eec755d0-6bbf-47fa-a486-dd73bfdc1fdd)| ![RewardedAd](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/3b71a7d5-48a7-49f6-af3c-989de7b39d77)|
   - Native Ads Integration:
@@ -78,8 +77,7 @@ Please be aware that all the photos and images used in this project, including t
 
 ##### Integrating IAP Kit: 
   - Consumable Product Integration: 
-    - By providing this payment option, player can use these gems to buy cube colors or something like that in the future.
-    - |   | |
+    - | By providing this payment option, player can use these gems to buy cube colors or something like that in the future.  | For example, in the first picture it was before buying gems, in the second one when the player buys 50 gems.|
       | ------------- | ------------- |
       |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/4c5c7ad8-03ab-44be-88a0-f38751437961)| ![gems](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/82064494/052025bb-abd0-4219-a0f4-32e92d36112f) |
 
