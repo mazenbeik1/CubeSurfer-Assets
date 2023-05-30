@@ -79,12 +79,13 @@ Please be aware that all the photos and images used in this project, including t
 ##### Integrating IAP Kit: 
   - Consumable Product Integration: 
     - By providing this payment option, player can use these gems to buy cube colors or something like that in the future.
-    - |   |
-      | ------------- | 
-      |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/4c5c7ad8-03ab-44be-88a0-f38751437961)|![IAP2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/82064494/e2680ddd-b81b-4bda-a298-395fd0637541)
+    - |   | |
+      | ------------- | ------------- |
+      |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/4c5c7ad8-03ab-44be-88a0-f38751437961)| ![gems](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/82064494/052025bb-abd0-4219-a0f4-32e92d36112f) |
+
 
   - NonConsumable Product Integration:
-    - - Players in the game have the choice to buy advertising permanently removal once throughout the game. Ads won't show up when they're playing after they purchase this feature. The UI of the game will alter to demonstrate the removal of adverts: one version will feature ads, while the other version won't. Additionally, to show that the user has made the purchase, a number "1" will appear next to the advertisements symbol. To prevent confusion, the player's purchase will disable the ad removal purchase button. In this manner, gamers can have uninterrupted gaming experience.
+    - Players in the game have the choice to buy advertising permanently removal once throughout the game. Ads won't show up when they're playing after they purchase this feature. The UI of the game will alter to demonstrate the removal of adverts: one version will feature ads, while the other version won't. Additionally, to show that the user has made the purchase, a number "1" will appear next to the advertisements symbol. To prevent confusion, the player's purchase will disable the ad removal purchase button. In this manner, gamers can have uninterrupted gaming experience.
     - |   |  |
       | ------------- | ------------- |
       |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/475a1daa-cd7b-4926-aafe-31374076b180)|![IAP2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/a34d3976-319f-4518-bbd8-ac46ff83df69)|
