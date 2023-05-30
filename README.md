@@ -63,6 +63,7 @@ Please be aware that all the photos and images used in this project, including t
       | ------------- | ------------- |
       |![InterAd1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/6e308895-9aff-4aa8-a30c-a7737c0de51c)  |  ![InterAd2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/c989aecd-430f-4f34-b0d8-47035984f6c8)|
   - Rewarded Ads for gameplay:
+    - In this example, the user will have the option to resume the game at level 2 if they decide to watch the advertisement. The game will start over at level one if they choose not to view the advertisement.
     - |   |  |
       | ------------- | ------------- |
       | ![NativeAds2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/eec755d0-6bbf-47fa-a486-dd73bfdc1fdd)| ![RewardedAd](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/3b71a7d5-48a7-49f6-af3c-989de7b39d77)|
@@ -77,11 +78,13 @@ Please be aware that all the photos and images used in this project, including t
 
 ##### Integrating IAP Kit: 
   - Consumable Product Integration: 
+    - By providing this payment option, player can use these gems to buy cube colors or something like that in the future.
     - |   |
       | ------------- | 
-      |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/4c5c7ad8-03ab-44be-88a0-f38751437961)|
+      |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/4c5c7ad8-03ab-44be-88a0-f38751437961)|![IAP2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/82064494/e2680ddd-b81b-4bda-a298-395fd0637541)
 
   - NonConsumable Product Integration:
+    - - Players in the game have the choice to buy advertising permanently removal once throughout the game. Ads won't show up when they're playing after they purchase this feature. The UI of the game will alter to demonstrate the removal of adverts: one version will feature ads, while the other version won't. Additionally, to show that the user has made the purchase, a number "1" will appear next to the advertisements symbol. To prevent confusion, the player's purchase will disable the ad removal purchase button. In this manner, gamers can have uninterrupted gaming experience.
     - |   |  |
       | ------------- | ------------- |
       |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/475a1daa-cd7b-4926-aafe-31374076b180)|![IAP2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/a34d3976-319f-4518-bbd8-ac46ff83df69)|
