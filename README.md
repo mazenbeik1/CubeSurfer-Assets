@@ -39,18 +39,15 @@ To play Cube Surfer, follow these steps:
 ##### Effects and Animations:
 - Our product delivers an exciting and immersive experience thanks to its excellent effects and animations. By combining visual effects, particle systems, and animations, we brought the game to life and raised player interest. For a seamless and pleasurable gameplay experience, attention to detail enabled smooth transitions, fluid animations, and clear visual feedback.
 ##### UI and UX flow:
-- We carefully considered the UI and UX flow of Cube Surfer to provide players with a fluid and exciting experience while including multiple interactive features.
-- We have a fail scenario that detects if the height of the cubes is less than the height of the wall when the player collides with it. Lower cubes cause the game to end; higher cubes cause the lower cubes to fall below the wall.
-- We have a speed booster in the game to increase excitement and variety. The player's speed rises when they contact the speed booster, increasing the gameplay and providing an exciting feeling of increased speed.
-- To encourage players, we have also included a scoring system. The player's score rises by one when they collide with gems, rewarding good interactions and giving them a sense of accomplishment.
-- In the event of a game over, we have created a restart option that enables players to immediately start a new gaming session and carry on their quest.
-- We have included a visually appealing screen that recognizes winners as they cross the finish line. In order to preserve a seamless transition between levels, this screen displays a 'Next Level' text that indicates their progression to the following level.
-- We developed an engaging and dynamic gameplay experience that keeps players interested and inspired to explore the game by taking into account these UI and UX components.
+-  We prioritized a smooth and thrilling user experience in Cube Surfer through careful UI and UX considerations. 
+-  The game features interactive elements such as fail scenarios for colliding with walls, speed boosters for increased excitement, and a scoring system rewarding gem collisions. 
+-  We also incorporated a restart option for immediate gameplay continuation and a visually appealing screen recognizing winners. 
+-  These UI and UX components create an engaging and dynamic gameplay experience, motivating players to explore the game further.
 ##### Game Design and Level Design:
-- As a result of our project's comprehensive consideration of both Game Design and Level Design, players will have a fun and varied gameplay experience. To create a difficult yet fun journey, we carefully developed the game mechanics, obstacles, and level advancement.
-- To improve the immersion experience, our game design includes a variety of components like cubes, gems, walls, and moving obstacles. These obstacles present special difficulties and interactions that force players to modify their abilities and tactics as they proceed, increasing the gameplay.
-- Our levels are designed with player development and learning in mind. Each level offers unique challenges and introduces new elements, such as colorful walls in Level 2. We carefully plan obstacle placement and difficulty to provide a progressively challenging yet enjoyable gameplay experience.
-- With our careful Game Design and Level Design, we hope to offer a fun and engaging gaming experience. Our goal is to keep gamers engaged, inspired, and eager to explore every level. We accomplish this by carefully designing the mechanics, obstacles, and leveling up.
+- Through comprehensive Game Design and Level Design considerations, we ensure players have a fun and diverse gameplay experience. 
+- Our game design incorporates various components like cubes, gems, walls, and moving obstacles, providing unique challenges and interactions that require adaptive tactics. 
+- Each level is carefully crafted to foster player development and learning, introducing new elements and progressively increasing challenge. 
+- Our aim is to deliver an engaging and inspiring gaming experience, keeping players motivated to explore and advance through each level.
 
 ### Note: Test Ads
 Please be aware that all the photos and images used in this project, including the interstitial ads, are for testing purposes only. These test ads are not actual advertisements provided by the Huawei plugin. They have been included to demonstrate the functionality and placement of interstitial ads within the Cube Surfer game during the development and testing phases.
