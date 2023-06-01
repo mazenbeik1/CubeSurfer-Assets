@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1424579275220415074}
   - component: {fileID: 1424579275220415069}
   - component: {fileID: 3549118094061082241}
-  - component: {fileID: 7645994282349659720}
   m_Layer: 5
   m_Name: native_large_image
   m_TagString: Untagged
@@ -81,25 +80,6 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &3549118094061082241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424579275220415070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7022497eca2e69409c30777b0833470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  adUnitID: testy63txaom86
-  ad_title: {fileID: 0}
-  button_title: {fileID: 0}
-  ad_source: {fileID: 0}
-  ad_call_to_action: {fileID: 0}
-  why_this_ad: {fileID: 0}
-  ad_media: {fileID: 0}
---- !u!114 &7645994282349659720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

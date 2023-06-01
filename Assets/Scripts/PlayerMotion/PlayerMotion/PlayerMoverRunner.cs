@@ -80,20 +80,11 @@ public class PlayerMoverRunner : MonoBehaviour
     }
     public void OnButtonClicked()
     {
-        // HMSIAPManager.Instance.InitializeIAP();
         StartUI.gameObject.SetActive(false);
-        LoadingUI.gameObject.SetActive(true);
-        StartCoroutine(Delay());
-    }
-    
-     public IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(3);
-        LoadingUI.gameObject.SetActive(false);
         BuiyingUI.gameObject.SetActive(true);
 
     }
-
+    
 
 
     private void Update()
