@@ -34,10 +34,14 @@ public class PlayerMoverRunner : MonoBehaviour
     public RectTransform WinUI;
     public RectTransform FailUILv1;
     public RectTransform StartUI;
+    public RectTransform BuiyingUI;
     public RectTransform FailUILv2;
     public RectTransform nativeWinUI;
     public RectTransform nativeFailUILv1;
     public RectTransform nativeFailUILv2;
+    public RectTransform LoadingUI;
+
+    
 
     public Button button;
 
@@ -67,12 +71,30 @@ public class PlayerMoverRunner : MonoBehaviour
             HMSManager.HideBannerAd();
         }
 
-        HMSIAPManager.Instance.InitializeIAP();
-        HMSIAPManager.Instance.OnBuyProductSuccess = OnBuyProductSuccess;
-        HMSIAPManager.Instance.OnInitializeIAPSuccess = OnInitializeIAPSuccess;
-        HMSIAPManager.Instance.OnInitializeIAPFailure = OnInitializeIAPFailure;
+        HMSIAPManager.Instance.OnBuyProductSuccess += OnBuyProductSuccess;
+        HMSIAPManager.Instance.OnInitializeIAPSuccess += OnInitializeIAPSuccess;
+        HMSIAPManager.Instance.OnInitializeIAPFailure += OnInitializeIAPFailure;
         HMSIAPManager.Instance.OnBuyProductFailure = OnBuyProductFailure;
+
+
     }
+    public void OnButtonClicked()
+    {
+        // HMSIAPManager.Instance.InitializeIAP();
+        StartUI.gameObject.SetActive(false);
+        LoadingUI.gameObject.SetActive(true);
+        StartCoroutine(Delay());
+    }
+    
+     public IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(3);
+        LoadingUI.gameObject.SetActive(false);
+        BuiyingUI.gameObject.SetActive(true);
+
+    }
+
+
 
     private void Update()
     {
@@ -262,7 +284,7 @@ public class PlayerMoverRunner : MonoBehaviour
             PlayerPrefs.SetString("GlobalScoreText", GlobalScore.ToString());
         }
 
-        if (myProductId.Equals("RemoveAds"))
+        if (myProductId == "RemoveAds" )
         {
             RemoveAdsText.text=PlayerPrefs.GetString("RemoveAdsText","0");
             RemoveAds=int.Parse(RemoveAdsText.text);        
