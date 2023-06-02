@@ -84,7 +84,7 @@ Please be aware that all the photos and images used in this project, including t
       | ------------- | ------------- |
       |![IAP1](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/475a1daa-cd7b-4926-aafe-31374076b180)|![IAP2](https://github.com/mazenbeik1/CubeSurfer-Assets/assets/30291556/a34d3976-319f-4518-bbd8-ac46ff83df69)|
 ##### Releasing app on App Gallery:
-  - Application Store Page Quality:
+  - Application Store Page Quality
   - Downloadable and Playable with all functionalities: [Cube Surfer](https://appgallery.huawei.com/app/C108387019)
 
 ## References
