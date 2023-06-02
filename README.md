@@ -93,3 +93,4 @@ Please be aware that all the photos and images used in this project, including t
 - Video Tutorial: [YouTube - Unity HMS Plugin Tutorial](https://www.youtube.com/watch?v=ZskQf4quNhU&ab_channel=AlihanErsoy)
 - Reference Articles: [EvilMindDevs/hms-unity-plugin - Reference Articles](https://evilminddevs.gitbook.io/hms-unity-plugin/references/reference-articles)
 - Reference Project: [Bunyamin Eymen - Project](https://github.com/bunyamineymen/Lesson_DevelopingMobileGames_2022-2023_Spring/tree/main/_Project)
+- Link to our game: [Cube Surfer](https://appgallery.huawei.com/app/C108387019)
