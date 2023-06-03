@@ -23,7 +23,7 @@ MonoBehaviour:
     - BannerAdID
     - RewardedAdID
     _values:
-    - True
+    - False
     - True
     - True
     - True
